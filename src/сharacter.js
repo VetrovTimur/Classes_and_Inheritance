@@ -1,15 +1,11 @@
 export default class Character {
     constructor(name, type) {
+      const types = ["Bowman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"];
       if (name.length < 2 || name.length > 10) {
         throw new Error("There is no such class");
       }
       this.name = name;
-  
-      if (
-        !["Bowman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"].some(
-          (el) => el === type
-        )
-      ) {
+      if (!types.some((el) => el === type)) {
         throw new Error("There is no such class");
       }
       this.type = type;
